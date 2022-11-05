@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="CustomListner"/>
+    </listeners>
+    <test name="Regression1" parallel = "classes">
+        <groups>
+            <run>
+                <include name="UITest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNG" />
+        </classes>
+    </test>
+    <test name="Regression2" parallel = "classes">
+        <groups>
+            <run>
+                <include name="DBTest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNG" />
+        </classes>
+
+    </test>
+</suite>
