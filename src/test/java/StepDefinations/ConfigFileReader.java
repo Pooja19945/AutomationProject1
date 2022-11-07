@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class ConfigFileReader {
          Properties properties;
-         final String propertyFilePath= "C:/Users/pooshind2/Desktop/Project/AutomationPracticeProject/Project1/AutomationFramework/Environment/Configrations/config.properties";
+         final String propertyFilePath= "C:/Users/pooshind2/Desktop/Project/AutomationPracticeProject/Project1/AutomationFramework/src/test/resources/Environment/Configrations/config.properties";
         public  void configReader(Map<String,String> testData) {
             BufferedReader reader;
             try {
@@ -37,7 +37,7 @@ public class ConfigFileReader {
         }
         public void testDataFromExcel(Map<String,String> testData){
 
-            File file=new File("C:/Users/pooshind2/Desktop/Project/AutomationPracticeProject/Project1/AutomationFramework/Environment/TestData/TestData.xlsx");
+            File file=new File("C:/Users/pooshind2/Desktop/Project/AutomationPracticeProject/Project1/AutomationFramework/src/test/resources/Environment/TestData/TestData.xlsx");
             try {
                 XSSFWorkbook wb=new  XSSFWorkbook(file);
                 XSSFSheet sheet=wb.getSheet("Module1");
@@ -55,9 +55,7 @@ public class ConfigFileReader {
                         }
                      }
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (InvalidFormatException e) {
+            } catch (IOException | InvalidFormatException e) {
                 throw new RuntimeException(e);
             }
 
